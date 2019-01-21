@@ -73,6 +73,9 @@ class App extends Component {
             <img
               src="http://opretreat.org/wp-content/uploads/2017/01/cropped-OP-WEb-Logo-68pxhigh.png"
               alt="Ocean Park Retreat Center"
+              style={{
+                width: 100,
+              }}
             />
           </a>
         </Panel.Body>
