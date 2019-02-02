@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Grid, Row, Col, Jumbotron, Button, Panel } from 'react-bootstrap';
+
+const logos = require.context('./images', false, /\.png$/);
 
 class App extends Component {
   render() {
@@ -25,10 +26,11 @@ class App extends Component {
           <Jumbotron>
             <img
               className="splash"
-              src="https://via.placeholder.com/1000x300"
+              src={this._select(logos)}
               style={{
                 maxWidth: "90%",
               }}
+              alt="Rainbow Camp Logo, with the text Rainbow Camp where the 'o' has a pride flag pattern inside"
             />
             <p className="splash">A 5 day faith experience for LGBTQ Youth and Young Adults.</p>
           </Jumbotron>
@@ -57,12 +59,16 @@ class App extends Component {
     return (
       <Panel>
         <Panel.Body style={{fontSize: 36, height: 98}}>
-          {today < end ?
-          `${this._getMonth(start)} ${start.getDate()} - ${end.getDate()}, ${start.getFullYear()}` :
-          `Check back later for ${end.getFullYear() + 1}`}
+          {this.renderDateMessage(start, end, today)}
         </Panel.Body>
       </Panel>
     );
+  }
+
+  renderDateMessage(start, end, today) {
+    return today < end ?
+      `${this._getMonth(start)} ${start.getDate()} - ${end.getDate()}, ${start.getFullYear()}` :
+      `Check back later for ${end.getFullYear() + 1}`;
   }
 
   renderLocation() {
@@ -74,7 +80,7 @@ class App extends Component {
               src="http://opretreat.org/wp-content/uploads/2017/01/cropped-OP-WEb-Logo-68pxhigh.png"
               alt="Ocean Park Retreat Center"
               style={{
-                width: 100,
+                width: "100%",
               }}
             />
           </a>
@@ -99,6 +105,15 @@ class App extends Component {
 
   _getMonth(date) {
     return date.toLocaleString('en-us', { month: 'long' });
+  }
+
+  _select(context) {
+    const key = context.keys()[this._randomWithin(0, context.keys().length-1)];
+    return context(key);
+  }
+
+  _randomWithin(floor, ceiling) {
+    return floor + Math.floor((Math.random() * (ceiling - floor)) + 1)
   }
 }
 
