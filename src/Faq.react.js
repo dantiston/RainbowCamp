@@ -3,14 +3,16 @@
  */
 
 import React, { Component } from 'react';
-import { Col, Card } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import RainbowCard from './RainbowCard.react.js';
 import './App.css';
 
 class Faq extends Component {
   render() {
     return (
       <Col sm={12} md={6}>
-        <Card>
+        <RainbowCard>
           <Card.Body className="faq">
             <div>
               <span><b>Question:&nbsp;</b></span>
@@ -21,11 +23,11 @@ class Faq extends Component {
               <span>{this.props.answer}</span>
             </div>
           </Card.Body>
-        </Card>
+        </RainbowCard>
       </Col>
     )
   }
 
 }
 
-export default Faq
+export default Faq;

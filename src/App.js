@@ -2,9 +2,12 @@
  * (C) 2019 Rainbow Camp
  */
 
-import React, { Component } from 'react';
-import './App.css';
 import Faq from './Faq.react.js';
+import RainbowCard from './RainbowCard.react.js';
+import React, { Component } from 'react';
+import Utils from './Utils.js';
+
+import './App.css';
 
 import { Container, Row, Col, Jumbotron, Button, Card } from 'react-bootstrap';
 
@@ -17,10 +20,12 @@ class App extends Component {
         <Container>
 
           { this.renderWelcome() }
+          { this.renderTOC() }
           { this.renderDetails() }
           { this.renderRegister() }
           { this.renderDescription() }
           { this.renderFaq() }
+          { this.renderContact() }
 
         </Container>
       </div>
@@ -34,7 +39,7 @@ class App extends Component {
           <Jumbotron>
             <img
               className="splash"
-              src={this._select(logos)}
+              src={Utils.selectFromContext(logos)}
               style={{
                 maxWidth: "90%",
               }}
@@ -45,6 +50,10 @@ class App extends Component {
         </Col>
       </Row>
     );
+  }
+
+  renderTOC() {
+    return;
   }
 
   renderDetails() {
@@ -66,23 +75,23 @@ class App extends Component {
     const end = new Date(2019, 5, 28);
     const today = new Date();
     return (
-      <Card style={{height: height}}>
+      <RainbowCard style={{height: height}}>
         <Card.Body style={{fontSize: 36, height: 98}}>
           {this.renderDateMessage(start, end, today)}
         </Card.Body>
-      </Card>
+      </RainbowCard>
     );
   }
 
   renderDateMessage(start, end, today) {
     return today < end ?
-      `${this._getMonth(start)} ${start.getDate()} - ${end.getDate()}, ${start.getFullYear()}` :
+      `${Utils.getMonth(start)} ${start.getDate()} - ${end.getDate()}, ${start.getFullYear()}` :
       `Check back later for ${end.getFullYear() + 1}`;
   }
 
   renderLocation(height) {
     return (
-      <Card style={{height: height}}>
+      <RainbowCard style={{height: height}}>
         <Card.Body>
           <a href="http://opretreat.org">
             <img
@@ -94,7 +103,7 @@ class App extends Component {
             />
           </a>
         </Card.Body>
-      </Card>
+      </RainbowCard>
     );
   }
 
@@ -116,12 +125,12 @@ class App extends Component {
     return (
       <Row className="show-grid description">
         <Col>
-          <Card>
+          <RainbowCard>
             <Card.Body style={{textIndent: 35}}>
               <div>Come experience a safe space where LGBTQ+ youth you can be in community with one another other LGBTQ+ youth, explore your spiritual life, and leave knowing that you are of sacred worth, loved by God, and you are important in the body of Christ.</div>
               <div>Build friendships, learn about one another and yourself, find your place in the world, all while kayaking, wave jumping in the ocean, dancing, singing, creating crafts, testing your archery skills, rock wall climbing, zip lining, worshipping in a community, diving into deep discussions with small groups, and enjoying the beautiful smell of the outdoors.</div>
             </Card.Body>
-          </Card>
+          </RainbowCard>
         </Col>
       </Row>
     );
@@ -140,7 +149,7 @@ class App extends Component {
         />
         <Faq
           question="What should I bring to camp?"
-          answer="You will be sent a list of items to bring to camp as we get closer to the dates. There will be a camp store with various clothing and items for sale. You can bring cash or a credit card to purchase items."
+          answer="You will be sent a list of items to bring to camp as we get closer to the dates. There will be a camp store with various clothing and items for sale. You can bring cash or a credit RainbowCard to purchase items."
         />
         <Faq
           question="What can't I bring into the camp?"
@@ -150,17 +159,8 @@ class App extends Component {
     );
   }
 
-  _getMonth(date) {
-    return date.toLocaleString('en-us', { month: 'long' });
-  }
-
-  _select(context) {
-    const key = context.keys()[this._randomWithin(0, context.keys().length-1)];
-    return context(key);
-  }
-
-  _randomWithin(floor, ceiling) {
-    return floor + Math.floor((Math.random() * (ceiling - floor)) + 1)
+  renderContact() {
+    return;
   }
 }
 
