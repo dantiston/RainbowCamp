@@ -9,7 +9,7 @@ import Utils from './Utils.js';
 
 import './App.css';
 
-import { Container, Row, Col, Jumbotron, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron, Button, Card, Alert } from 'react-bootstrap';
 
 const logos = require.context('./images', false, /\.png$/);
 
@@ -111,11 +111,9 @@ class App extends Component {
     return (
       <Row className="show-grid center">
         <Col>
-          <Jumbotron>
-            <Button variant="primary" style={{fontSize: 48}}>
-              Register
-            </Button>
-          </Jumbotron>
+          <Alert variant="primary" style={{fontSize: 48}} onClick={() => {}}>
+            Registration Coming Soon!
+          </Alert>
         </Col>
       </Row>
     );
