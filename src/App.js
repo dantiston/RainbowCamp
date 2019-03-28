@@ -11,7 +11,6 @@ import Utils from './Utils.js';
 import './App.css';
 
 import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
-import { List } from 'immutable';
 
 const logos = require.context('./images', false, /\.png$/);
 
@@ -30,7 +29,11 @@ class App extends Component {
   }
 
   _renderTOCSection(section) {
-    return <div id={section.toLowerCase()} />
+    return (
+      <p id={section.toLowerCase()} className="splash" style={{textTransform: 'capitalize'}}>
+        {section}
+      </p>
+    );
   }
 
   render() {
@@ -148,7 +151,7 @@ class App extends Component {
           <Col>
             <RainbowCard>
               <Card.Body style={{textAlign: 'justify'}}>
-                {paragraphs.map(p => <p style={{marginTop: 35}}>{p}</p>)}
+                {paragraphs.map(p => <p style={{marginBottom: 35}}>{p}</p>)}
               </Card.Body>
             </RainbowCard>
           </Col>
@@ -160,7 +163,7 @@ class App extends Component {
   renderFaq() {
     return (
       <>
-        {this._renderTOCSection('faq')}
+        {this._renderTOCSection('FAQ')}
         <Row className="show-grid equal">
           <Faq
             question="Are there minimum age requirements to register for the camp?"
