@@ -15,12 +15,12 @@ class Faq extends Component {
         <RainbowCard>
           <Card.Body className="faq">
             <div>
-              <span><b>Question:&nbsp;</b></span>
-              <span>{this.props.question}</span>
+              <p><b>Question:&nbsp;</b></p>
+              <p>{this.props.question}</p>
             </div>
             <div>
-              <span><b>Answer:&nbsp;</b></span>
-              <span>{this.props.answer}</span>
+              <p><b>Answer:&nbsp;</b></p>
+              <p>{this.props.answer}</p>
             </div>
           </Card.Body>
         </RainbowCard>

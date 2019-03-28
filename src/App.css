@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(210, 251, 202);
+  background-color: rgb(255, 255, 255);
 }
 
 .center {
@@ -41,10 +41,11 @@ img.splash {
 
 p.splash {
   font-size: 28pt;
+  margin-top: revert;
 }
 
-.faq, .description {
-  font-size: 14pt;
+p, a {
+  font-size: 18pt;
 }
 
 .card {
