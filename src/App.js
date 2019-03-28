@@ -139,7 +139,7 @@ class App extends Component {
 
   renderDescription() {
     const paragraphs = [
-      "A safe space for LGBTQ+ youth (12-21yrs) where you can be yourself without expectation. Where you can explore your spiritual life, build friendships, learn about one another and yourself, find your place in the world and leave knowing that you are of sacred worth, loved by God, and you are important in the body of Christ, all the while kayaking, hiking, making smores, and enjoying the world around you.",
+      "A safe space for LGBTQ+ youth (12 - 21 yrs) where you can be yourself without expectation. Where you can explore your spiritual life, build friendships, learn about one another and yourself, find your place in the world and leave knowing that you are of sacred worth, loved by God, and you are important in the body of Christ, all the while kayaking, hiking, making smores, and enjoying the world around you.",
       "Rainbow Camp is for LGBTQ+ youth and young adults ages 12 – 21. Join us for a week in the beautiful outdoors, surrounded by tall trees and a small walk (really) to the beach. We’ll wave jump in the Pacific Ocean, build sandcastles, play volleyball, and play games on the wonderful lawn. We’ll worship in the outdoor chapel, sing songs and hear stories around the campfire, learn about God’s unending love for us, and connect with fellow campers in small groups. Mixed into all the fun there are opportunities to go kayaking, climb a rock wall, participate in challenge course activities, archery, and of course plenty of crafting opportunities.",
       "Rainbow Camp is organized and led by LGBTQ+ Clergy and Lay leaders for LGBTQ+ youth and young adults.",
       "Camp Cost: $450 per camper (scholarships are available)",
@@ -150,7 +150,7 @@ class App extends Component {
         <Row className="show-grid description">
           <Col>
             <RainbowCard>
-              <Card.Body style={{textAlign: 'justify'}}>
+              <Card.Body>
                 {paragraphs.map(p => <p style={{marginBottom: 35}}>{p}</p>)}
               </Card.Body>
             </RainbowCard>
@@ -175,7 +175,7 @@ class App extends Component {
           />
           <Faq
             question="What should I bring to camp?"
-            answer="You will be sent a list of items to bring to camp as we get closer to the dates. There will be a camp store with various clothing and items for sale. You can bring cash or a credit RainbowCard to purchase items."
+            answer="You will be sent a list of items to bring to camp as we get closer to the dates. There will be a camp store with various clothing and items for sale. You can bring cash or a credit card to purchase items."
           />
           <Faq
             question="What can't I bring into the camp?"
