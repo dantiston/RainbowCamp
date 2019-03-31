@@ -92,7 +92,7 @@ class App extends Component {
     return (
       <Row className="show-grid center" style={{marginBottom: 25}}>
         <Col sm={12} md={6}>
-          <p className="splash">{this.renderDates(this._getStartDate(), this._getEndDate())}</p>
+          <p className="splash" style={{textAlign: 'center'}}>{this.renderDates(this._getStartDate(), this._getEndDate())}</p>
         </Col>
         <Col sm={12} md={6}>
           {this.renderLocation(height)}
@@ -103,7 +103,7 @@ class App extends Component {
 
   renderDates(start, end) {
     return new Date() < end ?
-      <>{Utils.getMonth(start)} {start.getDate()}<sup>th</sup> to {end.getDate()}<sup>th</sup>, {start.getFullYear()}</> :
+      <>{Utils.getMonth(start)} {start.getDate()}<sup>th</sup> to {end.getDate()}<sup>th</sup> {start.getFullYear()}</> :
       <>Check back later for {end.getFullYear() + 1}</>;
   }
 
