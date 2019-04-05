@@ -10,7 +10,7 @@ import Utils from './Utils.js';
 
 import './App.css';
 
-import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 const logos = require.context('./images', false, /\.png$/);
 
@@ -129,9 +129,7 @@ class App extends Component {
     return (
       <Row className="show-grid center">
         <Col>
-          <Alert variant="primary" style={{fontSize: 48}} onClick={() => {}}>
-            Registration Coming Soon!
-          </Alert>
+          <Button value="Download Registration Forms" href="/RainbowCampForms.zip" size="lg" style={{fontSize: 20}}>Download Registration Forms</Button>
         </Col>
       </Row>
     );
@@ -142,7 +140,7 @@ class App extends Component {
       "A safe space for LGBTQ+ youth (12 - 21 yrs) where you can be yourself without expectation. Where you can explore your spiritual life, build friendships, learn about one another and yourself, find your place in the world and leave knowing that you are of sacred worth, loved by God, and you are important in the body of Christ, all the while kayaking, hiking, making smores, and enjoying the world around you.",
       "Rainbow Camp is for LGBTQ+ youth and young adults ages 12 – 21. Join us for a week in the beautiful outdoors, surrounded by tall trees and a small walk (really) to the beach. We’ll wave jump in the Pacific Ocean, build sandcastles, play volleyball, and play games on the wonderful lawn. We’ll worship in the outdoor chapel, sing songs and hear stories around the campfire, learn about God’s unending love for us, and connect with fellow campers in small groups. Mixed into all the fun there are opportunities to go kayaking, climb a rock wall, participate in challenge course activities, archery, and of course plenty of crafting opportunities.",
       "Rainbow Camp is organized and led by LGBTQ+ Clergy and Lay leaders for LGBTQ+ youth and young adults.",
-      "Camp Cost: $450 per camper (scholarships are available)",
+      "The full 5 day, 4 night Rainbow Camp experience, with 11 meals included, is $450 per camper. Scholarships are available.",
     ];
     return (
       <>
@@ -194,22 +192,22 @@ class App extends Component {
           <Col>
             <RainbowCard>
               <Card.Body>
-                <p>{this._getYear()} Camp Location</p>
-                <p>Ocean Park Camp & Retreat Center<br/>
-                   28511 Vernon Ave<br/>
-                   Ocean Park, WA 98640</p>
-                <a href="http://opretreat.org">opretreat.org</a>
+                <p>{this._getYear()} Camp Sponsor</p>
+                <p>Fairwood Community United Methodist Church<br/>
+                   15255 SE Fairwood Blvd<br/>
+                   Renton, WA 98058</p>
+                <a href="http://www.fairwoodumc.org">fairwoodumc.org</a>
               </Card.Body>
             </RainbowCard>
           </Col>
           <Col>
             <RainbowCard>
               <Card.Body>
-                <p>{this._getYear()} Camp Sponsor</p>
-                <p>Fairwood Community United Methodist Church<br/>
-                   15255 SE Fairwood Blvd<br/>
-                   Renton, WA 98058</p>
-                <a href="http://www.fairwoodumc.org">fairwoodumc.org</a>
+                <p>{this._getYear()} Camp Location</p>
+                <p>Ocean Park Camp & Retreat Center<br/>
+                   28511 Vernon Ave<br/>
+                   Ocean Park, WA 98640</p>
+                <a href="http://opretreat.org">opretreat.org</a>
               </Card.Body>
             </RainbowCard>
           </Col>

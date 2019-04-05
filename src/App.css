@@ -42,6 +42,7 @@ img.splash {
 p.splash {
   font-size: 28pt;
   margin-top: revert;
+  text-align: center;
 }
 
 p, a {
