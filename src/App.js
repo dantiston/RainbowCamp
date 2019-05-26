@@ -102,9 +102,10 @@ class App extends Component {
   }
 
   renderDates(start, end) {
-    return new Date() < end ?
-      <>{Utils.getMonth(start)} {start.getDate()}<sup>th</sup> to {end.getDate()}<sup>th</sup> {start.getFullYear()}</> :
-      <>Check back later for {end.getFullYear() + 1}</>;
+      return <>Coming in June 2020</>;
+    // return new Date() < end ?
+    //   <>{Utils.getMonth(start)} {start.getDate()}<sup>th</sup> to {end.getDate()}<sup>th</sup> {start.getFullYear()}</> :
+    //   <>Check back later for {end.getFullYear() + 1}</>;
   }
 
   renderLocation() {
